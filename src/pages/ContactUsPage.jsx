@@ -6,12 +6,12 @@ export default function ContactUsPage() {
   return (
 
     <>
-      <div className="relative h-[90vh]">
+      <div className="relative h-[60vh]">
 
         <img
-          src="/Images/contact Us Banner.jpg.jpeg"
+          src=""
           alt="banner"
-          className="w-full h-full object-cover"
+          className=" object-cover"
         />
 
         <div className="absolute inset-0 bg-black/30"></div>
@@ -29,32 +29,32 @@ export default function ContactUsPage() {
             </p>
           </div>
           <button className="mb-6 text-lg  text-center">
-            <Link to='tel:+918858587858' className="bg-red-700 p-4 rounded-xl hover:bg-red-800">Contact Us</Link>
+            <Link to='tel:+918858587858' className="bg-blue-600 p-4 rounded-xl hover:bg-blue-800">Contact Us</Link>
           </button>
         </div>
       </div>
-      <section className="bg-gray-100 py-10 px-4">
-
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-
-          {/* Left Side - Info */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg space-y-6 hover:shadow-xl transition">
-
-            {/* Heading */}
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-2">Contact Us</h2>
+      <section className=" py-10 px-4">
+         <div className="text-center">
+              <h2 className="text-3xl text-blue-600 font-bold mb-2">Contact Us</h2>
               <p className="text-gray-600">
                 Have questions? We'd love to hear from you. Reach out anytime.
               </p>
             </div>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+          {/* Left Side - Info */}
+          <div className="bg-white p-8 rounded-2xl shadow-blue-300 space-y-6 hover:shadow-md transition">
+
+            {/* Heading */}
+           
 
             {/* 🔥 ONE LINE CONTACT INFO */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
 
               {/* Phone */}
               <div className="flex flex-col items-center gap-2">
-                <div className="bg-red-100 p-3 rounded-full">
-                  <FaPhoneAlt className="text-red-700 text-xl" />
+                <div className="bg-blue-300 p-3 rounded-full">
+                  <FaPhoneAlt className="text-blue-600 text-xl" />
                 </div>
                 <p className="text-gray-700 text-sm">
                   <strong>Phone:</strong><br />
@@ -64,8 +64,8 @@ export default function ContactUsPage() {
 
               {/* Email */}
               <div className="flex flex-col items-center gap-2">
-                <div className="bg-red-100 p-3 rounded-full">
-                  <FaEnvelope className="text-red-700 text-xl" />
+                <div className="bg-blue-300 p-3 rounded-full">
+                  <FaEnvelope className="text-blue-600 text-xl" />
                 </div>
                 <p className="text-gray-700 text-sm break-all">
                   <strong>Email:</strong><br />
@@ -77,8 +77,8 @@ export default function ContactUsPage() {
 
               {/* Address */}
               <div className="flex flex-col items-center gap-2">
-                <div className="bg-red-100 p-3 rounded-full">
-                  <FaMapMarkerAlt className="text-red-700 text-xl" />
+                <div className="bg-blue-300 p-3 rounded-full">
+                  <FaMapMarkerAlt className="text-blue-600 text-xl" />
                 </div>
                 <p className="text-gray-700 text-sm">
                   <strong>Address:</strong><br />
@@ -105,39 +105,39 @@ export default function ContactUsPage() {
           {/* Right Side - Form */}
 {/* import BookingInfoPage from './BookingInfoPage'; */}
 
-          <form className="bg-white p-6 rounded-2xl shadow-md space-y-4">
+          <form className="bg-white p-6 rounded-2xl shadow-blue-300 hover:shadow-md space-y-4">
             <label>Name*</label>
             <input
               type="text"
               placeholder="Enter Your Full Name"
-              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700"
+              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <label>Email*</label>
             <input
               type="email"
               placeholder="Enter Your Email Address"
-              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700"
+              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <label>Phone*</label>
             <input
               type="tel"
               placeholder="Enter Your Phone Number"
-              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700"
+              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <label>Subject</label>
             <input
               type="text"
               placeholder="Subject"
-              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700"
+              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <label>Message</label>
             <textarea
               rows="3"
               placeholder="Your Message"
-              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700"
+              className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             ></textarea>
 
-            <button className="w-full bg-red-700 cursor-pointer text-white py-3 rounded-lg hover:bg-red-800 transition">
+            <button className="w-full bg-blue-600 cursor-pointer text-white py-3 rounded-lg hover:bg-blue-800 transition">
               Send Message
             </button>
           </form>

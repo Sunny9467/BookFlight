@@ -1,47 +1,39 @@
 import React, { useState } from "react";
-import { BiHotel, BiPlanet } from "react-icons/bi";
+import { BiPlanet, BiHotel, BiCar, BiTrip, BiSearch, BiCalendar, BiUser } from "react-icons/bi";
 import { BsArrowLeftRight } from "react-icons/bs";
-import { FaCar, FaShip } from "react-icons/fa";
-
-import FlightDeals from "../components/FlightDeals";
-import FeaturePage from "./FeaturePage";
+import { RiShipLine } from "react-icons/ri";
 import TravelerModal from "../components/TravelModal";
-import BlogCard from "./BlogCard";
-import { blogs } from "../data/blog";
-import Testimonial from "../components/Testimonial";
-import FaqPage from "./FaqPage";
 
-const HomePage = () => {
-  const [tripType, setTripType] = useState("round");
+const FlightPage = () => {
   const [activeTab, setActiveTab] = useState("flights");
-
-  const [from, setFrom] = useState("DEL");
-  const [to, setTo] = useState("HYD");
-
-  const [departureDate, setDepartureDate] = useState("");
-  const [returnDate, setReturnDate] = useState("");
-
-  const handleSwap = () => {
-    const temp = from;
-    setFrom(to);
-    setTo(temp);
-  };
+  const [tripType, setTripType] = useState("round");
+  
+    const [from, setFrom] = useState("DEL");
+    const [to, setTo] = useState("HYD");
+  
+    const [departureDate, setDepartureDate] = useState("");
+    const [returnDate, setReturnDate] = useState("");
+  
+    const handleSwap = () => {
+      const temp = from;
+      setFrom(to);
+      setTo(temp);
+    };
+  
 
   return (
-    <section>
-
-      {/* HERO */}
+    <div className="w-full bg-[#f4f7f9] font-sans">
+     
       <div className="relative w-full bg-gradient-to-r from-[#0046ad] to-[#002b70] min-h-[300px] md:min-h-[400px] p-4 md:p-8">
+     
+             <div className="absolute inset-0 opacity-10">
+               <BiPlanet className="absolute top-10 left-10 text-white" size={40} />
+               <BiPlanet className="absolute bottom-20 right-20 text-white" size={60} />
+             </div>
+     
+           </div>
 
-        <div className="absolute inset-0 opacity-10">
-          <BiPlanet className="absolute top-10 left-10 text-white" size={40} />
-          <BiPlanet className="absolute bottom-20 right-20 text-white" size={60} />
-        </div>
-
-      </div>
-
-      {/* SEARCH BOX */}
-      <div className="max-w-7xl mx-auto px-4 -mt-50 md:-mt-30 relative z-20">
+           <div className="max-w-7xl mx-auto px-4 -mt-50 md:-mt-30 relative z-20">
 
         {/* Tabs */}
         <div className="bg-white rounded-t-xl shadow-lg flex p-1 w-full md:w-fit mx-auto overflow-x-auto">
@@ -183,27 +175,43 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* OTHER SECTIONS */}
-      <FeaturePage />
-      <FlightDeals />
-      <Testimonial/>
 
-      {/* BLOG SECTION */}
-      <div className="max-w-7xl px-3 py-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch">
-
-        <div className="md:col-span-2">
-          <BlogCard post={blogs[0]} isFeatured />
+      {/* --- 4. FLIGHT DEALS SECTION --- */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-black text-center text-blue-600 uppercase tracking-tight">Handpicked Top Flight Deals</h2>
+        <p className="text-center text-gray-500 mt-2">Get access to unbeatable flight offers tailored to your travel needs.</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+          {[
+            { from: 'LAX', to: 'LAS', price: '$87.99*', date: '02 May 2026 - 04 May 2026' },
+            { from: 'DEN', to: 'HOU', price: '$131.97*', date: '05 May 2026 - 11 May 2026' },
+            { from: 'NYC', to: 'CLE', price: '$142.38*', date: '08 May 2026 - 10 May 2026' },
+            { from: 'NYC', to: 'CLE', price: '$142.38*', date: '08 May 2026 - 10 May 2026' },
+            { from: 'NYC', to: 'CLE', price: '$142.38*', date: '08 May 2026 - 10 May 2026' },
+            { from: 'NYC', to: 'CLE', price: '$142.38*', date: '08 May 2026 - 10 May 2026' },
+            { from: 'NYC', to: 'CLE', price: '$142.38*', date: '08 May 2026 - 10 May 2026' },
+            { from: 'BOS', to: 'CHI', price: '$181.19*', date: '02 Jun 2026 - 06 Jun 2026' }
+          ].map((deal, idx) => (
+            <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center hover:shadow-md transition-shadow">
+              <div className="space-y-1">
+                <p className="text-xs font-bold text-gray-400">{deal.date}</p>
+                <div className="flex items-center gap-4">
+                  <span className="text-xl font-bold">{deal.from}</span>
+                  <div className="flex-1 border-t-2 border-dashed border-gray-200 w-12"></div>
+                  <span className="text-xl font-bold">{deal.to}</span>
+                </div>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-gray-400">RoundTrip</p>
+                <p className="text-2xl font-black text-green-600">{deal.price}</p>
+              </div>
+            </div>
+          ))}
         </div>
-
-        <div className="flex flex-col justify-between h-full gap-6">
-          <BlogCard post={blogs[1]} />
-          <BlogCard post={blogs[2]} />
-        </div>
-
       </div>
-          <FaqPage/>
-    </section>
+    </div>
   );
 };
 
-export default HomePage;
+export default FlightPage;
+

@@ -101,8 +101,8 @@ const FlightDeals = () => {
 
           {/* HEADER */}
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-4xl font-extrabold text-[#1a1a1a] mb-2 uppercase">
-              Handpicked Top Flight Deals
+            <h2 className="text-2xl md:text-4xl font-extrabold text-blue-600 mb-2 uppercase">
+              Top Flight Deals
             </h2>
             <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
               Get access to unbeatable flight offers tailored to your travel needs.
@@ -110,11 +110,11 @@ const FlightDeals = () => {
           </div>
 
           {/* ARROWS */}
-          <button className="prev-btn absolute left-0 md:-left-5 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-100">
+          <button className="prev-btn absolute left-0 md:-left-5 cursor-pointer top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-100">
             <IoIosArrowBack size={20} />
           </button>
 
-          <button className="next-btn absolute right-0 md:-right-5 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-100">
+          <button className="next-btn absolute right-0 md:-right-5 cursor-pointer top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-100">
             <IoIosArrowForward size={20} />
           </button>
 

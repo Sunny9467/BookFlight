@@ -1,3 +1,4 @@
+import { Minus, Plus } from "lucide-react";
 import React, { useState } from "react";
 
 const TravelerModal = () => {
@@ -41,7 +42,7 @@ const TravelerModal = () => {
               <button
                 key={type}
                 onClick={() => setCabin(type)}
-                className={`py-2 border rounded ${
+                className={`py-2 border cursor-pointer rounded ${
                   cabin === type
                     ? "bg-blue-600 text-white"
                     : ""
@@ -53,13 +54,17 @@ const TravelerModal = () => {
           </div>
 
           {/* Counters */}
-          {["adults", "children", "infantsLap"].map((type) => (
+          {["adults", "children"].map((type) => (
             <div key={type} className="flex justify-between items-center mb-3">
               <span className="capitalize">{type}</span>
               <div className="flex gap-3 items-center">
-                <button onClick={() => updateCount(type, -1)}>-</button>
+                <button onClick={() => updateCount(type, -1)}>
+                  <Minus className="rounded-2xl border cursor-pointer"/>
+                </button>
                 <span>{counts[type]}</span>
-                <button onClick={() => updateCount(type, 1)}>+</button>
+                <button onClick={() => updateCount(type, 1)}>
+                  <Plus className="rounded-2xl border cursor-pointer"/>
+                </button>
               </div>
             </div>
           ))}

@@ -7,6 +7,13 @@ import FeaturePage from './pages/FeaturePage'
 import BlogList from './components/BlogList'
 import BlogDetailsPage from './pages/BlogDetailsPage'
 import ContactUsPage from './pages/ContactUsPage'
+import Testimonial from './components/Testimonial'
+import PageNotFound from './pages/PageNotFound'
+import Sitemap from './pages/SiteMap'
+import AboutPage from './pages/AboutPage'
+import HotelPage from './pages/HotelPage'
+import FlightPage from './pages/FlightPage'
+import FaqPage from './pages/FaqPage'
 
 export default function App() {
   return (
@@ -16,12 +23,19 @@ export default function App() {
 
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path="/feature" element={<FeaturePage />} />
-
-          <Route path="/contact-us" element={<ContactUsPage />} />
-
-          <Route path='/blogs' element={<BlogList />} />
+          <Route path='/about-us' element={<AboutPage />} />
           <Route path='/blogs/:slug' element={<BlogDetailsPage />} />
+          <Route path="/feature" element={<FeaturePage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/hotels" element={<HotelPage />} />
+          <Route path="/flights" element={<FlightPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+
+          <Route path='/reviews' element={<Testimonial />} />
+          <Route path='/blogs' element={<BlogList />} />
+
+          <Route path='/*' element={<PageNotFound />} />
         </Routes>
 
         <Footer />

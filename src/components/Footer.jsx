@@ -5,121 +5,100 @@ import {
   FaPinterestP, FaYoutube 
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="w-full font-sans">
-      {/* 1. Newsletter Section */}
+
+      {/* NEWSLETTER */}
       <div className="max-w-7xl mx-auto px-4 -mb-16 relative z-10">
-        <div className="bg-gradient-to-l from-[#9fb3d3] to-[#cfd5df] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-xl overflow-hidden relative">
-          <div className="text-black z-10 md:w-1/2">
-            <h2 className="text-3xl font-bold mb-2">Subscribe to our Newsletter</h2>
-            <p className="text-black">Get latest offers from FlightBook Online</p>
-            
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+        <div className="bg-gradient-to-l from-[#9fb3d3] to-[#cfd5df] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-xl">
+
+          <div className="text-black md:w-1/2 text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+              Subscribe to our Newsletter
+            </h2>
+            <p>Get latest offers from FlightBook Online</p>
+
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
               <input 
                 type="email" 
                 placeholder="Example@gmail.com" 
-                className="px-4 py-3 rounded-md w-full border sm:w-64  outline-none"
+                className="px-4 py-3 rounded-md w-full sm:w-64 border outline-none"
               />
-              {/* <div className="relative">
-                <select className="appearance-none px-4 py-3 rounded-md w-full sm:w-40 bg-white text-gray-800 outline-none">
-                  <option>🇺🇸 United States</option>
-                </select>
-              </div> */}
-              <button className="bg-[#1D4ED8] hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-md transition duration-300">
+              <button className="bg-[#1D4ED8] hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-md transition">
                 Subscribe
               </button>
             </div>
           </div>
 
-          {/* Abstract Envelope Illustration (Simplified) */}
-          <div className="hidden md:block absolute right-10 top-1/2 -translate-y-1/2">
-             <div className="w-48 h-48 bg-white/10 rounded-full flex items-center justify-center">
-                <div className="text-white text-6xl rotate-12">✉️</div>
-             </div>
+          {/* ICON */}
+          <div className="hidden md:flex items-center justify-center w-40 h-40 bg-white/20 rounded-full">
+            <span className="text-5xl">✉️</span>
           </div>
         </div>
       </div>
 
-      {/* 2. Main Footer Links */}
-      <div className="bg-[#1A2B49] text-white pt-32 pb-10">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-12">
-          
-          {/* Column 1 */}
+      {/* MAIN FOOTER */}
+      <div className="bg-[#1A2B49] text-white pt-28 pb-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-10 border-b border-gray-700 pb-12">
+
+          {/* LOGO + ABOUT */}
+          <div className="md:col-span-2">
+           
+           <img src="/Images/logo/flight-booking-online-logo-final-png.png"
+            alt=""
+            className='h-30'
+            />
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Book flights, hotels and travel services at the best price. 
+              We provide a smooth and fast booking experience for our customers.
+            </p>
+
+            {/* SOCIAL */}
+            <div className="flex gap-4">
+              <div className="p-2 bg-blue-600 rounded-full hover:scale-110 transition"><FaFacebookF /></div>
+              <div className="p-2 bg-black rounded-full hover:scale-110 transition"><FaXTwitter /></div>
+              <div className="p-2 bg-blue-700 rounded-full hover:scale-110 transition"><FaLinkedinIn /></div>
+              <div className="p-2 bg-red-500 rounded-full hover:scale-110 transition"><BsGoogle /></div>
+            </div>
+          </div>
+
+          {/* QUICK LINKS */}
           <div>
             <h3 className="text-[#FF7A00] font-bold mb-4 uppercase text-sm">Quick Links</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-white cursor-pointer">Popular Airlines</li>
-              <li className="hover:text-white cursor-pointer">Popular Flight Routes</li>
-              <li className="hover:text-white cursor-pointer">Top U.S. Destinations</li>
-              <li className="hover:text-white cursor-pointer">Top International Destinations</li>
-              <li className="hover:text-white cursor-pointer">Top Airports</li>
-              <li className="hover:text-white cursor-pointer">Cruise</li>
+              <li><Link to="/" className="hover:text-white">Home</Link></li>
+              <li><Link to="/about-us" className="hover:text-white">About Us</Link></li>
+              <li><Link to="/faq" className="hover:text-white">Faq</Link></li>
+              <li><Link to="/contact-us" className="hover:text-white">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Column 2 */}
+          {/* BOOK */}
           <div>
             <h3 className="font-bold mb-4 uppercase text-sm">Book</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-white cursor-pointer">Cheap Flights</li>
-              <li className="hover:text-white cursor-pointer">Cheap Hotels</li>
-              <li className="hover:text-white cursor-pointer">Car Rentals</li>
-              <li className="hover:text-white cursor-pointer">Group Travel</li>
+              <li><Link to="/flights" className="hover:text-white">Cheap Flights</Link></li>
+              <li><Link to="/hotels" className="hover:text-white">Cheap Hotels</Link></li>
             </ul>
           </div>
 
-          {/* Column 3 */}
-          <div>
-            <h3 className="font-bold mb-4 uppercase text-sm">Traveler Tools</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-white cursor-pointer">Customer Support</li>
-              <li className="hover:text-white cursor-pointer">Online Check-in</li>
-              <li className="hover:text-white cursor-pointer">Airline Baggage Fees</li>
-              <li className="hover:text-white cursor-pointer">Travel Blog</li>
-              <li className="hover:text-white cursor-pointer">Customer Reviews</li>
-              <li className="hover:text-white cursor-pointer">Browser Compatibility</li>
-            </ul>
-          </div>
-
-          {/* Column 4 */}
-          <div>
-            <h3 className="font-bold mb-4 uppercase text-sm">About Booking Online</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-white cursor-pointer">About Us</li>
-              <li className="hover:text-white cursor-pointer">Contact Us</li>
-              <li className="hover:text-white cursor-pointer">Site Map</li>
-            </ul>
-          </div>
-
-          {/* Column 5 */}
+          {/* LEGAL */}
           <div>
             <h3 className="font-bold mb-4 uppercase text-sm">Legal</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-white cursor-pointer">Privacy Policy</li>
-              <li className="hover:text-white cursor-pointer">Terms & Conditions</li>
+              <li><Link to="/privacypolicy" className="hover:text-white">Privacy Policy</Link></li>
+              <li><Link to="/termcondition" className="hover:text-white">Terms & Conditions</Link></li>
             </ul>
           </div>
+
         </div>
 
-        {/* 3. Bottom Section */}
-        <div className="max-w-7xl mx-auto px-6 pt-8">
-          <p className="text-xs font-semibold mb-4 uppercase">Follow us on</p>
-          <div className="flex gap-4 mb-8">
-            <div className="p-2 bg-blue-600 rounded-full cursor-pointer hover:scale-110 transition-transform"><FaFacebookF /></div>
-            <div className="p-2 bg-black rounded-full cursor-pointer hover:scale-110 transition-transform"><FaXTwitter /></div>
-            <div className="p-2 bg-blue-700 rounded-full cursor-pointer hover:scale-110 transition-transform"><FaLinkedinIn /></div>
-            <div className="p-2 bg- rounded-full cursor-pointer hover:scale-110 transition-transform"><BsGoogle /></div>
-          </div>
-
-          <div className="text-[10px] md:text-xs text-gray-400 leading-relaxed">
-            Cheapflightsfares is an independent travel portal with no third party association. By using Cheapflightsfares.com, 
-            you agree that Cheapflightsfares is not accountable for any loss - direct or indirect, arising of offers, materials 
-            or links to other sites found on this website. In case of queries, reach us directly at our Contact Number 
-            <span className="text-white underline ml-1">+1-216-302-2732</span> or, simply email at 
-            <span className="text-white underline ml-1">support@cheapflightsfares.com</span>
-          </div>
+        {/* BOTTOM */}
+        <div className="text-center text-gray-400 text-sm mt-6">
+          © 2026 FlightBook. All rights reserved.
         </div>
       </div>
     </footer>

@@ -28,7 +28,7 @@ const AboutPage = () => {
           <div>
             <div className="rounded-sm overflow-hidden shadow-sm">
               <img 
-                src="public/Images/About Us intro 400x350.jpg.jpeg" 
+                src="/Images/About Us intro 400x350.jpg.jpeg" 
                 alt="Our Team" 
                 className="w-full h-full  object-cover"
               />

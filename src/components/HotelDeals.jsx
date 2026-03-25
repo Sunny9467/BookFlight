@@ -66,12 +66,10 @@ export default function HotelDeals() {
       <main className="max-w-6xl mx-auto p-6">
         <h1 className="text-2xl font-bold uppercase text-blue-600 mb-6">Today's Popular Destinations</h1>
 
-        {/* Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {hotels.map((hotel) => (
             <div key={hotel.id} className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
               
-              {/* Image & City Label */}
               <div className="relative h-60">
                 <img 
                   src={hotel.image} 
@@ -83,14 +81,12 @@ export default function HotelDeals() {
                 </div>
               </div>
 
-              {/* Details Section */}
               <div className="p-5">
                 <h2 className="text-xl font-bold text-gray-800 leading-tight">{hotel.name}</h2>
                 <p className="text-sm text-gray-500 mt-2 flex items-start gap-1">
                   <span className="text-gray-400">📍</span> {hotel.address}
                 </p>
 
-                {/* Rating & Status */}
                 <div className="mt-4 flex items-center gap-2">
                   <div className="flex gap-1">
                     {[1, 2, 3, 4, 5].map((s) => (
@@ -104,7 +100,6 @@ export default function HotelDeals() {
                   </span>
                 </div>
 
-                {/* Price & Action Row */}
                 <div className="mt-6 pt-4 border-t flex justify-between items-end">
                   <div>
                     <span className="text-[10px] uppercase font-bold text-gray-400 block mb-1">Starting From</span>
@@ -120,11 +115,6 @@ export default function HotelDeals() {
           ))}
         </div>
       </main>
-
-      {/* Floating Chat Button
-      <button className="fixed bottom-6 right-6 bg-blue-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold flex items-center gap-2 hover:bg-blue-700">
-        <Link to="/contact-us">💬 Chat</Link>
-      </button> */}
     </div>
    </>
   );

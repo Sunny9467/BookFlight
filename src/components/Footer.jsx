@@ -51,24 +51,24 @@ const Footer = () => {
             alt=""
             className='h-30'
             />
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-200 text-sm leading-relaxed mb-6">
               Book flights, hotels and travel services at the best price. 
               We provide a smooth and fast booking experience for our customers.
             </p>
 
             {/* SOCIAL */}
             <div className="flex gap-4">
-              <div className="p-2 bg-blue-600 rounded-full hover:scale-110 transition"><FaFacebookF /></div>
-              <div className="p-2 bg-black rounded-full hover:scale-110 transition"><FaXTwitter /></div>
-              <div className="p-2 bg-blue-700 rounded-full hover:scale-110 transition"><FaLinkedinIn /></div>
-              <div className="p-2 bg-red-500 rounded-full hover:scale-110 transition"><BsGoogle /></div>
+              <div className="p-2 bg-blue-600 rounded-full hover:scale-110 transition cursor-pointer"><FaFacebookF /></div>
+              <div className="p-2 bg-black rounded-full hover:scale-110 transition cursor-pointer"><FaXTwitter /></div>
+              <div className="p-2 bg-blue-700 rounded-full hover:scale-110 transition cursor-pointer"><FaLinkedinIn /></div>
+              <div className="p-2 bg-red-500 rounded-full hover:scale-110 transition cursor-pointer"><BsGoogle /></div>
             </div>
           </div>
 
           {/* QUICK LINKS */}
           <div>
-            <h3 className="text-[#FF7A00] font-bold mb-4 uppercase text-sm">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <h3 className=" font-bold mb-4 uppercase text-sm">Quick Links</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li><Link to="/" className="hover:text-white">Home</Link></li>
               <li><Link to="/about-us" className="hover:text-white">About Us</Link></li>
               <li><Link to="/faq" className="hover:text-white">Faq</Link></li>
@@ -80,7 +80,7 @@ const Footer = () => {
           {/* BOOK */}
           <div>
             <h3 className="font-bold mb-4 uppercase text-sm">Book</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-400">
               <li><Link to="/flights" className="hover:text-white">Cheap Flights</Link></li>
               <li><Link to="/hotels" className="hover:text-white">Cheap Hotels</Link></li>
             </ul>
@@ -89,16 +89,16 @@ const Footer = () => {
           {/* LEGAL */}
           <div>
             <h3 className="font-bold mb-4 uppercase text-sm">Legal</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/privacypolicy" className="hover:text-white">Privacy Policy</Link></li>
-              <li><Link to="/termcondition" className="hover:text-white">Terms & Conditions</Link></li>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link to="/privay&policy" className="hover:text-white">Privacy Policy</Link></li>
+              <li><Link to="/term&condition" className="hover:text-white">Terms & Conditions</Link></li>
             </ul>
           </div>
 
         </div>
 
         {/* BOTTOM */}
-        <div className="text-center text-gray-400 text-sm mt-6">
+        <div className="text-center text-gray-200 text-sm mt-6">
           © 2026 FlightBook. All rights reserved.
         </div>
       </div>

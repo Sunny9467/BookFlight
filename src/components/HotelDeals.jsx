@@ -79,7 +79,7 @@ const hotels = [
 export default function HotelDeals() {
   return (
    <>
-    <div className="bg-gray-50 min-h-screen font-sans">
+    <div className="bg-gray-50 mt-10 min-h-screen font-sans">
       
       <main className="max-w-6xl mx-auto p-6">
         <h1 className="text-2xl font-bold uppercase text-blue-600 mb-6">Today's Popular Destinations</h1>

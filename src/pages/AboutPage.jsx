@@ -8,9 +8,9 @@ const AboutPage = () => {
    <section>
      <div className="bg-white font-sans">
       
-      <div className="relative w-full h-[300px] md:h-[250px] flex items-center justify-center">
+      <div className="relative w-full h-[450px] md:h-[450px] flex items-center justify-center">
         <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
+          src="/Images/About Us 1920x450.jpg.jpeg" 
           alt="About Us Banner" 
           className="absolute inset-0 w-full h-full object-cover"
         />

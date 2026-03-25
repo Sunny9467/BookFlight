@@ -17,6 +17,8 @@ import FaqPage from './pages/FaqPage'
 import Login from './pages/User/Login'
 import Signup from './pages/User/Signup'
 import ChatWidget from './components/ChatWidget'
+import PrivacyPolicy from './pages/Policies/PrivacyPolicy'
+import TermCondition from './pages/Policies/TermCondition'
 
 export default function App() {
   return (
@@ -38,6 +40,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
+          <Route path='/privay&policy' element={<PrivacyPolicy/>}/>
+          <Route path='/term&condition' element={<TermCondition/>}/>
 
           <Route path='/reviews' element={<Testimonial />} />
           <Route path='/blogs' element={<BlogList />} />

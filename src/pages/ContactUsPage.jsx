@@ -9,9 +9,9 @@ export default function ContactUsPage() {
       <div className="relative h-[60vh]">
 
         <img
-          src=""
+          src="/Images/contact Us 1920x450.jpg.jpeg"
           alt="banner"
-          className=" object-cover"
+          className="w-full h-full object-cover"
         />
 
         <div className="absolute inset-0 bg-black/30"></div>

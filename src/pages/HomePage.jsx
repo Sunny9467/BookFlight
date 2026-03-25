@@ -33,9 +33,9 @@ const HomePage = () => {
       <div className="relative w-full h-[250px] sm:h-[320px] md:h-[400px] lg:h-[450px] overflow-hidden">
 
         <img
-          src=""  
+          src="public/Images/Home page banner 1920 x 450.jpg.jpeg"  
           alt="banner"
-          className="absolute inset-0 border h-[450px] w-[1920px] object-cover"
+          className="absolute inset-0 border h-full w-full object-cover"
         />
 
         <div className="absolute inset-0 bg-black/40"></div>
@@ -52,7 +52,7 @@ const HomePage = () => {
         </div>
 
       </div>
-      <div className="max-w-7xl mx-auto px-4 -mt-50 md:-mt-30 relative z-20">
+      <div className="max-w-7xl mx-auto px-4  md:-mt-30 relative z-20">
 
         <div className="bg-white  rounded-t-xl shadow-lg flex w-full md:w-fit mx-auto overflow-hidden">
 

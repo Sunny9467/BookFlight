@@ -17,7 +17,6 @@ const deals = [
     to: "New York City",
     img: "/Images/New York City.jpg.jpeg",
     airline: "Delta",
-    logo:  "https://upload.wikimedia.org/wikipedia/commons/5/5d/American_Airlines_logo_2013.svg",
     price: 120,
     date: "May 02, 2026 - May 05, 2026"
   },
@@ -25,9 +24,8 @@ const deals = [
     id: 2,
     from: "Chicago",
     to: "San Francisco",
-    img: "/Images/San Francisco.jpg.jpeg",
+    img: "/Images/Chicago.jpg.jpeg",
     airline: "United",
-    logo: "https://logo.clearbit.com/united.com",
     price: 180,
     date: "May 10, 2026 - May 14, 2026"
   },
@@ -37,7 +35,6 @@ const deals = [
     to: "Los Angeles",
     img: "/Images/Los Angeles.jpg.jpeg",
     airline: "American Airlines",
-    logo: "https://logo.clearbit.com/aa.com",
     price: 150,
     date: "May 12, 2026 - May 16, 2026"
   },
@@ -47,7 +44,6 @@ const deals = [
     to: "Las Vegas",
     img: "/Images/Las Vegas.jpg.jpeg",
     airline: "Southwest",
-    logo: "https://logo.clearbit.com/southwest.com",
     price: 95,
     date: "May 15, 2026 - May 18, 2026"
   },
@@ -55,9 +51,8 @@ const deals = [
     id: 5,
     from: "Atlanta",
     to: "Miami",
-    img: "/Images/Miami.jpg.jpeg",
+    img: "/Images/Cleveland.jpg.jpeg",
     airline: "JetBlue",
-    logo: "https://logo.clearbit.com/jetblue.com",
     price: 130,
     date: "May 18, 2026 - May 22, 2026"
   },
@@ -65,9 +60,8 @@ const deals = [
     id: 6,
     from: "Phoenix",
     to: "Grand Canyon",
-    img: "/Images/Grand Canyon national park.jpg.jpeg",
+    img: "/Images/Houston.jpg.jpeg",
     airline: "Frontier",
-    logo: "https://logo.clearbit.com/flyfrontier.com",
     price: 80,
     date: "May 20, 2026 - May 23, 2026"
   },
@@ -75,9 +69,8 @@ const deals = [
     id: 7,
     from: "Orlando",
     to: "Walt Disney World",
-    img: "/Images/Walt Disney World.jpg.jpeg",
+    img: "/Images/Denver.jpg.jpeg",
     airline: "Alaska Airlines",
-    logo: "https://logo.clearbit.com/alaskaair.com",
     price: 110,
     date: "May 25, 2026 - May 28, 2026"
   },
@@ -85,9 +78,8 @@ const deals = [
     id: 8,
     from: "Denver",
     to: "Yellowstone National Park",
-    img: "/Images/Yellowstone National Park.jpg.jpeg",
+    img: "/Images/Boston.jpg.jpeg",
     airline: "United",
-    logo: "https://logo.clearbit.com/united.com",
     price: 170,
     date: "May 28, 2026 - June 01, 2026"
   }
@@ -147,7 +139,7 @@ const FlightDeals = () => {
                   <img
                     src={deal.img}
                     alt={deal.to}
-                    className="w-[300px] h-[220px] border sm:h-[220px] md:h-[250px] object-cover hover:scale-110 transition duration-500"
+                    className="w-full h-full  sm:h-[220px] md:h-[250px] object-cover hover:scale-110 transition duration-500"
                   />
 
                   {/* CONTENT */}
@@ -162,7 +154,6 @@ const FlightDeals = () => {
 
                     {/* AIRLINE */}
                     <div className="flex items-center gap-2 mb-4">
-                      <img src={deal.logo} alt="" className="w-6 h-6  object-contain bg-white p-1 rounded" />
                       <span className="text-xs text-gray-600">
                         {deal.airline} • Economy
                       </span>

@@ -44,35 +44,10 @@ const FlightPage = () => {
       </div>
 
       {/* SEARCH BOX */}
-      <div className="max-w-7xl mx-auto px-4 -mt-20 sm:-mt-24 md:-mt-40 relative z-20">
-
-        {/* Tabs */}
-        <div className="bg-white rounded-t-xl shadow-lg flex w-full md:w-fit mx-auto overflow-hidden">
-          <button
-            onClick={() => setActiveTab("flights")}
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 font-semibold ${
-              activeTab === "flights"
-                ? "bg-blue-100 text-blue-600"
-                : "text-blue-600"
-            }`}
-          >
-            <MdFlightTakeoff /> Flights
-          </button>
-
-          <button
-            onClick={() => setActiveTab("hotels")}
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 font-semibold ${
-              activeTab === "hotels"
-                ? "bg-blue-100 text-blue-600"
-                : "text-blue-600"
-            }`}
-          >
-            <BiHotel /> Hotels
-          </button>
-        </div>
+      <div className="max-w-7xl mx-auto px-4  -mt-20 sm:-mt-24 md:-mt-45 relative z-20">
 
         {/* BOX */}
-        <div className="bg-white rounded-xl shadow-2xl p-4 md:p-6">
+        <div className="bg-white rounded-xl shadow-2xl p-2 md:p-6">
 
           {activeTab === "flights" && (
             <>
@@ -111,7 +86,7 @@ const FlightPage = () => {
                   {/* Swap */}
                   <div
                     onClick={handleSwap}
-                    className="absolute md:left-1/2 md:top-1/2 right-2 top-1/2 -translate-y-1/2 md:-translate-x-1/2 bg-white border rounded-full p-1.5 shadow-sm cursor-pointer hover:bg-blue-50"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-full w-7 h-7 flex items-center justify-center shadow-sm cursor-pointer hover:bg-blue-50"
                   >
                     <BsArrowLeftRight size={14} />
                   </div>
@@ -119,7 +94,7 @@ const FlightPage = () => {
                   <input
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
-                    className="w-full md:w-1/2 border rounded-lg md:rounded-r-lg p-2 bg-gray-100"
+                    className="w-full md:w-1/2 border rounded-lg md:rounded-r-lg p-4 bg-gray-100"
                     placeholder="To"
                   />
                 </div>
@@ -138,9 +113,8 @@ const FlightPage = () => {
                 </div>
 
                 {/* RETURN */}
-                <div className={`md:col-span-2 border rounded-lg p-3 bg-[#f0f4f8] h-16 flex flex-col justify-center ${
-                  tripType === "one" ? "opacity-50 pointer-events-none" : ""
-                }`}>
+                <div className={`md:col-span-2 border rounded-lg p-3 bg-[#f0f4f8] h-16 flex flex-col justify-center ${tripType === "one" ? "opacity-50 pointer-events-none" : ""
+                  }`}>
                   <label className="text-[10px] text-gray-500 font-bold">
                     Return
                   </label>
@@ -159,7 +133,7 @@ const FlightPage = () => {
                 </div>
 
                 {/* BUTTON */}
-                <button className="md:col-span-2 w-full bg-blue-600 text-white rounded-lg py-3 hover:bg-blue-700">
+                <button className="md:col-span-2 w-full cursor-pointer bg-blue-600 text-white rounded-lg py-3 hover:bg-blue-700">
                   Search Flights
                 </button>
 
@@ -167,17 +141,6 @@ const FlightPage = () => {
             </>
           )}
 
-          {/* HOTEL */}
-          {activeTab === "hotels" && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-              <input type="text" placeholder="City / Hotel" className="border p-3 rounded-lg bg-gray-100" />
-              <input type="date" className="border p-3 rounded-lg bg-gray-100" />
-              <input type="date" className="border p-3 rounded-lg bg-gray-100" />
-              <button className="bg-blue-600 text-white rounded-lg py-3">
-                Search Hotels
-              </button>
-            </div>
-          )}
 
         </div>
       </div>
@@ -190,6 +153,10 @@ const FlightPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
           {[
+            { from: "LAX", to: "LAS", price: "$87.99*", date: "02 May - 04 May" },
+            { from: "DEN", to: "HOU", price: "$131.97*", date: "05 May - 11 May" },
+            { from: "LAX", to: "LAS", price: "$87.99*", date: "02 May - 04 May" },
+            { from: "DEN", to: "HOU", price: "$131.97*", date: "05 May - 11 May" },
             { from: "LAX", to: "LAS", price: "$87.99*", date: "02 May - 04 May" },
             { from: "DEN", to: "HOU", price: "$131.97*", date: "05 May - 11 May" },
           ].map((deal, idx) => (

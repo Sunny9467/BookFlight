@@ -6,7 +6,7 @@ export default function ContactUsPage() {
   return (
 
     <>
-      <div className="relative h-[60vh]">
+      <div className="relative h-[450px]">
 
         <img
           src="/Images/contact Us 1920x450.jpg.jpeg"

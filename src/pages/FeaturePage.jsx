@@ -29,7 +29,7 @@ export default function FeaturePage() {
         <section 
             data-aos="fade-up" 
             data-aos-duration="1500" 
-            className="py-16 bg-gray-50" 
+            className="py-16 " 
         >
             {/* Main Container jo content ko center mein rakhega aur side padding dega */}
             <div className="max-w-7xl mx-auto px-6 ">

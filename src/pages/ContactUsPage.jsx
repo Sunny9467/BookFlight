@@ -20,17 +20,10 @@ export default function ContactUsPage() {
 
           <div className="mt-20">
 
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center">
-              Let’s connect and solve your queries with our dedicated support team today
+            <h1 className="text-3xl md:text-5xl font-semibold mb-4 text-center">
+             Contact Us
             </h1>
-
-            <p className="mb-6 text-lg text-center">
-              Your satisfaction is our priority. Contact us for any help, feedback, or questions and we will make sure to guide you with the best solution.
-            </p>
           </div>
-          <button className="mb-6 text-lg  text-center">
-            <Link to='tel:+918858587858' className="bg-blue-600 p-4 rounded-xl hover:bg-blue-800">Contact Us</Link>
-          </button>
         </div>
       </div>
       <section className=" py-10 px-4">

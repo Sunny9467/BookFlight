@@ -141,16 +141,14 @@ const FlightDeals = () => {
             {deals.map((deal) => (
               <SwiperSlide key={deal.id}>
 
-                <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-blue-300 hover:shadow-xl transition duration-300">
+                <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
 
                   {/* IMAGE */}
-                  <div className="h-[250px] w-[282px] border overflow-hidden">
-                    <img
-                      src={deal.img}
-                      alt={deal.to}
-                      className="w-full h-full object-cover hover:scale-110 transition duration-500"
-                    />
-                  </div>
+                  <img
+                    src={deal.img}
+                    alt={deal.to}
+                    className="w-[300px] h-[220px] border sm:h-[220px] md:h-[250px] object-cover hover:scale-110 transition duration-500"
+                  />
 
                   {/* CONTENT */}
                   <div className="p-5">
@@ -187,7 +185,7 @@ const FlightDeals = () => {
                         </span>
                       </div>
 
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-4 py-2 rounded-lg">
+                      <button className="bg-blue-600 hover:bg-blue-300 text-white text-xs px-4 py-2 rounded-lg transition">
                         Book Now
                       </button>
                     </div>

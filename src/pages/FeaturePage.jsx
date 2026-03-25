@@ -34,7 +34,7 @@ export default function FeaturePage() {
             {/* Main Container jo content ko center mein rakhega aur side padding dega */}
             <div className="max-w-7xl mx-auto px-6 ">
                 
-                <h2 className="text-center text-3xl font-black  tracking-tight text-blue-600 mb-12">
+                <h2 className="text-center uppercase text-3xl font-black  tracking-tight text-blue-600 mb-12">
                     Our Features
                 </h2>
 

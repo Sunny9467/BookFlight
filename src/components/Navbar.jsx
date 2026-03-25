@@ -1,3 +1,4 @@
+import { User2 } from "lucide-react";
 import React, { useState } from "react";
 import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -22,7 +23,12 @@ export default function NavbarHero() {
 
                 {/* Right Side */}
                 <div className="hidden md:flex items-center gap-6 font-bold">
-                    <p className="cursor-pointer">My Booking</p>
+                    {/* <p className="cursor-pointer">My Booking</p> */}
+                    <div className="cursor-pointer">
+                    <Link to="/login">
+                        <User2/>
+                    </Link>
+                    </div>
                     <p className="cursor-pointer">English (US)</p>
 
                     <div className="flex items-center gap-2 border hover:text-orange-800 cursor-pointer border-orange-300 text-orange-500 px-4 py-2 rounded-full font-semibold">
@@ -46,20 +52,18 @@ export default function NavbarHero() {
                 <Link to="/about-us" className="cursor-pointer hover:text-blue-600 hover:underline decoration-blue-500">About Us</Link>
                 <Link to="/flights" className="cursor-pointer hover:text-blue-600 hover:underline  decoration-blue-500">Flights</Link>
                 <Link to="/hotels" className="cursor-pointer hover:text-blue-600 hover:underline decoration-blue-500">Hotels</Link>
-
-
-                <Link to="/contact-us" className="cursor-pointer hover:text-blue-600 hover:underline decoration-blue-500">Contact Us</Link>
+                <Link to="/contact-us" className="cursor-pointer hover:text-blue-600 hover:underline decoration-blue-500">Contact Us</Link>          
             </div>
 
             {/* MOBILE MENU */}
             {menuOpen && (
                 <div className="md:hidden bg-white shadow-md flex flex-col items-center gap-4 py-4">
+                    <Link to="/">Home</Link>
+                    <Link to="/about-us">About Us</Link>
                     <Link to="/flights">Flights</Link>
                     <Link to="/hotels">Hotels</Link>
-                    <Link to="/testimonial">Reviews</Link>
-                    <Link to="/customer-support">Customer Support</Link>
-                    <Link to="/contactus">Contact Us</Link>
-
+                    <Link to="/contact-us">Contact Us</Link>
+                    <Link to="/login">Login</Link>
                     <div className="flex items-center gap-2 border border-orange-400 text-orange-500 px-4 py-2 rounded-full font-semibold">
                         <FaPhoneAlt />
                         <span>+1-216-302-2732</span>

@@ -14,6 +14,8 @@ import AboutPage from './pages/AboutPage'
 import HotelPage from './pages/HotelPage'
 import FlightPage from './pages/FlightPage'
 import FaqPage from './pages/FaqPage'
+import Login from './pages/User/Login'
+import Signup from './pages/User/Signup'
 
 export default function App() {
   return (
@@ -31,6 +33,10 @@ export default function App() {
           <Route path="/hotels" element={<HotelPage />} />
           <Route path="/flights" element={<FlightPage />} />
           <Route path="/faq" element={<FaqPage />} />
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
 
           <Route path='/reviews' element={<Testimonial />} />
           <Route path='/blogs' element={<BlogList />} />

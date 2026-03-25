@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { BiHotel, BiPlanet } from "react-icons/bi";
+import { BiHotel } from "react-icons/bi";
 import { BsArrowLeftRight } from "react-icons/bs";
-import { FaCar, FaShip } from "react-icons/fa";
 
 import FlightDeals from "../components/FlightDeals";
 import FeaturePage from "./FeaturePage";
@@ -10,6 +9,7 @@ import BlogCard from "./BlogCard";
 import { blogs } from "../data/blog";
 import Testimonial from "../components/Testimonial";
 import FaqPage from "./FaqPage";
+import {  MdFlightTakeoff } from "react-icons/md";
 
 const HomePage = () => {
   const [tripType, setTripType] = useState("round");
@@ -30,40 +30,48 @@ const HomePage = () => {
   return (
     <section>
 
-      {/* HERO */}
-      <div className="relative w-full bg-gradient-to-r from-[#0046ad] to-[#002b70] min-h-[300px] md:min-h-[400px] p-4 md:p-8">
+      <div className="relative w-full h-[250px] sm:h-[320px] md:h-[400px] lg:h-[450px] overflow-hidden">
 
-        <div className="absolute inset-0 opacity-10">
-          <BiPlanet className="absolute top-10 left-10 text-white" size={40} />
-          <BiPlanet className="absolute bottom-20 right-20 text-white" size={60} />
+        <img
+          src=""  
+          alt="banner"
+          className="absolute inset-0 border h-[450px] w-[1920px] object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
+          <div className="text-white">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+              Book Flights Easily ✈️
+            </h1>
+            <p className="text-sm md:text-lg">
+              Find the best deals and explore the world
+            </p>
+          </div>
         </div>
 
       </div>
-
-      {/* SEARCH BOX */}
       <div className="max-w-7xl mx-auto px-4 -mt-50 md:-mt-30 relative z-20">
 
-        {/* Tabs */}
-        <div className="bg-white rounded-t-xl shadow-lg flex p-1 w-full md:w-fit mx-auto overflow-x-auto">
+        <div className="bg-white rounded-t-xl shadow-lg flex w-full md:w-fit mx-auto overflow-hidden">
 
           <button
             onClick={() => setActiveTab("flights")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm ${
-              activeTab === "flights"
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm ${activeTab === "flights"
                 ? "bg-blue-100 text-blue-600"
                 : "text-gray-600"
-            }`}
+              }`}
           >
-            <BiPlanet /> Flights
+            <MdFlightTakeoff /> Flights
           </button>
 
           <button
             onClick={() => setActiveTab("hotels")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm ${
-              activeTab === "hotels"
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm ${activeTab === "hotels"
                 ? "bg-blue-100 text-blue-600"
                 : "text-gray-600"
-            }`}
+              }`}
           >
             <BiHotel /> Hotels
           </button>
@@ -78,7 +86,6 @@ const HomePage = () => {
 
         </div>
 
-        {/* MAIN BOX */}
         <div className="bg-white rounded-xl shadow-2xl p-4 md:p-6">
 
           {activeTab === "flights" && (
@@ -103,7 +110,6 @@ const HomePage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
 
-                {/* From / To */}
                 <div className="md:col-span-4 flex relative h-16">
                   <input
                     value={from}
@@ -125,7 +131,6 @@ const HomePage = () => {
                   />
                 </div>
 
-                {/* Departure */}
                 <div className="md:col-span-2 border rounded-lg p-3 bg-[#f0f4f8] h-16 flex flex-col justify-center">
                   <label className="text-[10px] text-gray-500 uppercase font-bold">
                     Departure
@@ -138,10 +143,8 @@ const HomePage = () => {
                   />
                 </div>
 
-                {/* Return */}
-                <div className={`md:col-span-2 border rounded-lg p-3 bg-[#f0f4f8] h-16 flex flex-col justify-center ${
-                  tripType === "one" ? "opacity-50 pointer-events-none" : ""
-                }`}>
+                <div className={`md:col-span-2 border rounded-lg p-3 bg-[#f0f4f8] h-16 flex flex-col justify-center ${tripType === "one" ? "opacity-50 pointer-events-none" : ""
+                  }`}>
                   <label className="text-[10px] text-gray-500 uppercase font-bold">
                     Return
                   </label>
@@ -154,12 +157,10 @@ const HomePage = () => {
                   />
                 </div>
 
-                {/* Traveler */}
                 <div className="md:col-span-2 ">
                   <TravelerModal />
                 </div>
 
-                {/* Button */}
                 <button className="md:col-span-2 bg-blue-600 text-white cursor-pointer rounded-lg py-3">
                   Search Flights
                 </button>
@@ -168,7 +169,6 @@ const HomePage = () => {
             </>
           )}
 
-          {/* HOTEL UI */}
           {activeTab === "hotels" && (
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
               <input type="text" placeholder="City / Hotel" className="border p-3 rounded-lg bg-gray-100" />
@@ -183,12 +183,10 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* OTHER SECTIONS */}
       <FeaturePage />
       <FlightDeals />
-      <Testimonial/>
+      <Testimonial />
 
-      {/* BLOG SECTION */}
       <div className="max-w-7xl px-3 py-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch">
 
         <div className="md:col-span-2">
@@ -201,7 +199,7 @@ const HomePage = () => {
         </div>
 
       </div>
-          <FaqPage/>
+      <FaqPage />
     </section>
   );
 };

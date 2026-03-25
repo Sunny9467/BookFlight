@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiCalendar, BiMap, BiUser } from 'react-icons/bi'
+import HotelDeals from '../components/HotelDeals'
 
 export default function HotelPage() {
     return (
@@ -73,7 +74,7 @@ export default function HotelPage() {
                 </div>
             </div>
 
-
+        <HotelDeals/>
         </>
     )
 }

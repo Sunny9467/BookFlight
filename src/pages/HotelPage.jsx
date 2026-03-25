@@ -1,84 +1,177 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { BiCalendar, BiMap, BiUser } from 'react-icons/bi'
 import HotelDeals from '../components/HotelDeals'
 
 export default function HotelPage() {
-    return (
-        <>
-            <div className="w-full bg-[#f4f7f9] font-sans">
 
-               
-                <div className="relative w-full h-[450px] md:h-[550px] overflow-hidden">
-                    
-                    <img
-                        src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80"
-                        alt="Hotel Resort Pool"
-                        className="w-full h-full object-cover"
-                    />
+  // ---------------- STATE ----------------
+  const [city, setCity] = useState("")
+  const [suggestions, setSuggestions] = useState([])
 
-                    
-                    <div className="absolute bottom-40 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                        <span className="w-2.5 h-2.5 bg-white rounded-full shadow-md"></span>
-                        <span className="w-2.5 h-2.5 bg-white/50 rounded-full"></span>
-                        <span className="w-2.5 h-2.5 bg-white/50 rounded-full"></span>
-                    </div>
+  const [showGuest, setShowGuest] = useState(false)
+  const guestRef = useRef()
 
-                    
-                    <div className="absolute bottom-0 left-0 w-full bg-[#002b70]/95 py-8 px-4 border-t border-white/10">
-                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-2 items-center">
+  const [rooms, setRooms] = useState(1)
+  const [adults, setAdults] = useState(2)
+  const [children, setChildren] = useState(0)
 
-                            {/* Destination Input */}
-                            <div className="w-full md:flex-1 bg-white rounded-sm flex items-center px-4 py-3 h-12">
-                                <BiMap className="text-blue-500 mr-2" size={20} />
-                                <input
-                                    type="text"
-                                    placeholder="Your Destination"
-                                    className="w-full outline-none text-gray-700 text-sm font-medium"
-                                />
-                            </div>
+  // ---------------- STATIC CITY LIST ----------------
+  const citiesList = [
+    "Delhi", "Mumbai", "Bangalore", "Chennai",
+    "New York", "Los Angeles", "Chicago",
+    "London", "Dubai", "Paris"
+  ]
 
-                            {/* Check-in Date */}
-                            <div className="w-full md:w-44 bg-white rounded-sm flex items-center px-4 py-3 h-12">
-                                <BiCalendar className="text-blue-500 mr-2" size={20} />
-                                <input
-                                    type="text"
-                                    placeholder="03-26-2026"
-                                    className="w-full outline-none text-gray-700 text-sm font-medium"
-                                />
-                            </div>
+  // ---------------- SEARCH FUNCTION ----------------
+  const fetchCities = (value) => {
+    setCity(value)
 
-                            {/* Check-out Date */}
-                            <div className="w-full md:w-44 bg-white rounded-sm flex items-center px-4 py-3 h-12">
-                                <BiCalendar className="text-blue-500 mr-2" size={20} />
-                                <input
-                                    type="text"
-                                    placeholder="03-31-2026"
-                                    className="w-full outline-none text-gray-700 text-sm font-medium"
-                                />
-                            </div>
+    if (value.length === 0) {
+      setSuggestions([])
+      return
+    }
 
-                            {/* Rooms/Guests Selector */}
-                            <div className="w-full md:w-60 bg-white rounded-sm flex items-center px-4 py-3 h-12">
-                                <BiUser className="text-blue-500 mr-2" size={20} />
-                                <div className="text-sm text-gray-600 font-medium truncate">
-                                    1 Room, 2 Adults, 0 Chi...
-                                </div>
-                            </div>
-
-                            {/* Search Button */}
-                            <button className="w-full md:w-32 bg-[#0066ee] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-sm transition-all h-12 uppercase text-sm tracking-wider">
-                                Search
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <HotelDeals/>
-        </>
+    const filtered = citiesList.filter(c =>
+      c.toLowerCase().includes(value.toLowerCase())
     )
+
+    setSuggestions(filtered)
+  }
+
+  // ---------------- OUTSIDE CLICK CLOSE ----------------
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (guestRef.current && !guestRef.current.contains(e.target)) {
+        setShowGuest(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  return (
+    <>
+      <div className="w-full bg-[#f4f7f9] font-sans">
+
+        <div className="relative w-full h-[450px] md:h-[550px] ">
+
+          {/* IMAGE */}
+          <img
+            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80"
+            alt="Hotel"
+            className="w-full h-full object-cover"
+          />
+
+          {/* SEARCH BAR */}
+          <div className="absolute bottom-0 left-0 w-full bg-[#002b70]/95 py-8 px-4">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-2 items-center relative">
+
+              {/* DESTINATION */}
+              <div className="w-full md:flex-1 bg-white flex items-center px-4 py-3 h-12 relative">
+                <BiMap className="text-blue-500 mr-2" size={20} />
+
+                <input
+                  type="text"
+                  value={city}
+                  onChange={(e) => fetchCities(e.target.value)}
+                  placeholder="Your Destination"
+                  className="w-full outline-none text-sm"
+                />
+
+                {/* DROPDOWN */}
+                {suggestions.length > 0 && (
+                  <div className="absolute top-12 left-0 w-full bg-white shadow-lg z-50 max-h-40 overflow-y-auto">
+                    {suggestions.map((item, i) => (
+                      <div
+                        key={i}
+                        onClick={() => {
+                          setCity(item)
+                          setSuggestions([])
+                        }}
+                        className="p-2 cursor-pointer hover:bg-blue-100 text-sm"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* CHECK-IN */}
+              <div className="w-full md:w-44 bg-white flex items-center px-4 py-3 h-12">
+                <BiCalendar className="text-blue-500 mr-2" size={20} />
+                <input type="date" className="w-full outline-none text-sm" />
+              </div>
+
+              {/* CHECK-OUT */}
+              <div className="w-full md:w-44 bg-white flex items-center px-4 py-3 h-12">
+                <BiCalendar className="text-blue-500 mr-2" size={20} />
+                <input type="date" className="w-full outline-none text-sm" />
+              </div>
+
+              {/* GUESTS */}
+              <div
+                ref={guestRef}
+                className="relative w-full md:w-60 bg-white px-4 py-3 h-12 flex items-center justify-between cursor-pointer"
+                onClick={() => setShowGuest(!showGuest)}
+              >
+                <div className="flex items-center gap-2">
+                  <BiUser className="text-blue-500" size={20} />
+                  <span className="text-sm">
+                    {rooms} Room, {adults} Adults, {children} Children
+                  </span>
+                </div>
+
+                {/* DROPDOWN */}
+                {showGuest && (
+                  <div className="absolute top-14 left-0 w-full bg-white shadow-lg p-4 z-50 space-y-3">
+
+                    {/* ROOMS */}
+                    <div className="flex justify-between">
+                      <span>Rooms</span>
+                      <div className="flex gap-2">
+                        <button onClick={() => setRooms(Math.max(1, rooms - 1))}>-</button>
+                        <span>{rooms}</span>
+                        <button onClick={() => setRooms(rooms + 1)}>+</button>
+                      </div>
+                    </div>
+
+                    {/* ADULTS */}
+                    <div className="flex justify-between">
+                      <span>Adults</span>
+                      <div className="flex gap-2">
+                        <button onClick={() => setAdults(Math.max(1, adults - 1))}>-</button>
+                        <span>{adults}</span>
+                        <button onClick={() => setAdults(adults + 1)}>+</button>
+                      </div>
+                    </div>
+
+                    {/* CHILDREN */}
+                    <div className="flex justify-between">
+                      <span>Children</span>
+                      <div className="flex gap-2">
+                        <button onClick={() => setChildren(Math.max(0, children - 1))}>-</button>
+                        <span>{children}</span>
+                        <button onClick={() => setChildren(children + 1)}>+</button>
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+              </div>
+
+              {/* BUTTON */}
+              <button className="w-full md:w-32 bg-blue-600 hover:bg-blue-400 text-white font-bold h-12">
+                Search
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <HotelDeals />
+    </>
+  )
 }
-
-
-
-

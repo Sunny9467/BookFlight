@@ -43,7 +43,7 @@ export default function FeaturePage() {
                         Features.map((item, index) => (
                             <div 
                                 key={index} 
-                                className="bg-white cursor-pointer rounded-3xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-100 transition-all duration-300 hover:-translate-y-2 group"
+                                className="bg-white cursor-pointer rounded-3xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-300 transition-all duration-300 hover:-translate-y-2 group"
                             >
                                 {/* Icon Container */}
                                 <div className="text-blue-600 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">

@@ -43,7 +43,7 @@ const HomePage = () => {
         <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
           <div className="text-white">
             <h1 className="text-2xl md:text-4xl font-bold mb-2">
-              Book Flights Easily ✈️
+              Book Flights Easily 
             </h1>
             <p className="text-sm md:text-lg">
               Find the best deals and explore the world
@@ -54,13 +54,13 @@ const HomePage = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 -mt-50 md:-mt-30 relative z-20">
 
-        <div className="bg-white rounded-t-xl shadow-lg flex w-full md:w-fit mx-auto overflow-hidden">
+        <div className="bg-white  rounded-t-xl shadow-lg flex w-full md:w-fit mx-auto overflow-hidden">
 
           <button
             onClick={() => setActiveTab("flights")}
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm ${activeTab === "flights"
+            className={`flex-1 cursor-pointer flex items-center font-semibold justify-center gap-2 px-4 py-2 text-md ${activeTab === "flights"
                 ? "bg-blue-100 text-blue-600"
-                : "text-gray-600"
+                : "text-blue-600"
               }`}
           >
             <MdFlightTakeoff /> Flights
@@ -68,9 +68,9 @@ const HomePage = () => {
 
           <button
             onClick={() => setActiveTab("hotels")}
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm ${activeTab === "hotels"
+            className={`flex-1 flex cursor-pointer items-center font-semibold justify-center gap-2 px-4 py-2 text-md ${activeTab === "hotels"
                 ? "bg-blue-100 text-blue-600"
-                : "text-gray-600"
+                : "text-blue-600"
               }`}
           >
             <BiHotel /> Hotels
@@ -90,8 +90,8 @@ const HomePage = () => {
 
           {activeTab === "flights" && (
             <>
-              <div className="flex gap-6 mb-6 text-sm font-semibold">
-                <label>
+              <div className="flex gap-6 mb-6  text-sm font-semibold">
+                <label className="cursor-pointer font-semibold">
                   <input
                     type="radio"
                     checked={tripType === "round"}
@@ -99,7 +99,7 @@ const HomePage = () => {
                   /> Round Trip
                 </label>
 
-                <label>
+                <label className="cursor-pointer font-semibold">
                   <input
                     type="radio"
                     checked={tripType === "one"}
@@ -174,7 +174,7 @@ const HomePage = () => {
               <input type="text" placeholder="City / Hotel" className="border p-3 rounded-lg bg-gray-100" />
               <input type="date" className="border p-3 rounded-lg bg-gray-100" />
               <input type="date" className="border p-3 rounded-lg bg-gray-100" />
-              <button className="bg-blue-600 text-white rounded-lg py-3">
+              <button className="bg-blue-600 cursor-pointer text-white rounded-lg py-3">
                 Search Hotels
               </button>
             </div>

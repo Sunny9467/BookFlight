@@ -43,27 +43,13 @@ const FaqPage = () => {
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 -mt-10 pb-20">
-        
+      <div className="max-w-4xl mx-auto px-6  -mt-10 pb-20">
       
-        {/* <div className="bg-white rounded-xl shadow-lg p-2 flex items-center mb-12">
-          <div className="pl-4 text-gray-400"><BiHelpCircle size={24} /></div>
-          <input 
-            type="text" 
-            placeholder="Search for questions..." 
-            className="w-full p-4 outline-none text-gray-700 font-medium"
-          />
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition-all">
-            Search
-          </button>
-        </div> */}
-
-      
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           {faqs.map((faq, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
+              className="bg-white rounded-xl  border border-gray-100 shadow-sm overflow-hidden"
             >
               <button 
                 onClick={() => toggleFAQ(index)}
@@ -71,9 +57,9 @@ const FaqPage = () => {
               >
                 <span className="font-bold text-gray-800 text-lg">{faq.question}</span>
                 {openIndex === index ? (
-                  <BiChevronUp className="text-blue-600" size={28} />
+                  <BiChevronUp className="text-blue-600 cursor-pointer" size={28} />
                 ) : (
-                  <BiChevronDown className="text-gray-400" size={28} />
+                  <BiChevronDown className="text-gray-400 cursor-pointer" size={28} />
                 )}
               </button>
               

@@ -17,7 +17,7 @@ const deals = [
     to: "New York City",
     img: "/Images/New York City.jpg.jpeg",
     airline: "Delta",
-    logo: "https://logo.clearbit.com/delta.com",
+    logo:  "https://upload.wikimedia.org/wikipedia/commons/5/5d/American_Airlines_logo_2013.svg",
     price: 120,
     date: "May 02, 2026 - May 05, 2026"
   },
@@ -97,7 +97,7 @@ const FlightDeals = () => {
   return (
     <>
       <div className="bg-[#f3f7ff] py-16 px-4">
-        <div className="max-w-7xl mx-auto bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 relative">
+        <div className="max-w-7xl mx-auto bg-white cursor-pointer rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 relative">
 
           {/* HEADER */}
           <div className="text-center mb-10">
@@ -162,7 +162,7 @@ const FlightDeals = () => {
 
                     {/* AIRLINE */}
                     <div className="flex items-center gap-2 mb-4">
-                      <img src={deal.logo} alt="" className="w-6 h-6" />
+                      <img src={deal.logo} alt="" className="w-6 h-6  object-contain bg-white p-1 rounded" />
                       <span className="text-xs text-gray-600">
                         {deal.airline} • Economy
                       </span>

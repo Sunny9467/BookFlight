@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const hotels = [
   {
@@ -81,7 +82,7 @@ export default function HotelDeals() {
     <div className="bg-gray-50 min-h-screen font-sans">
       
       <main className="max-w-6xl mx-auto p-6">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Today's Popular Destinations</h1>
+        <h1 className="text-2xl font-bold uppercase text-blue-600 mb-6">Today's Popular Destinations</h1>
 
         {/* Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -138,10 +139,10 @@ export default function HotelDeals() {
         </div>
       </main>
 
-      {/* Floating Chat Button */}
+      {/* Floating Chat Button
       <button className="fixed bottom-6 right-6 bg-blue-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold flex items-center gap-2 hover:bg-blue-700">
-        💬 Chat
-      </button>
+        <Link to="/contact-us">💬 Chat</Link>
+      </button> */}
     </div>
    </>
   );
